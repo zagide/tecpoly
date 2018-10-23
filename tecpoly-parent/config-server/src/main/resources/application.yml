@@ -1,0 +1,14 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+#        native:
+#          search-locations: classpath:/shared
+  profiles:
+    active: pro
