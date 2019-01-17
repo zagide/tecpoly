@@ -1,0 +1,26 @@
+server:
+  port: 8880
+spring:
+  application:
+    name: manager-web
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3308/test?characterEncoding=utf-8&useSSL=false
+      username: zhangdi
+      password: zhangdi
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

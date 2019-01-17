@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <properties resource="application.properties"/>
+
+    <context id="mysqlTest" targetRuntime="MyBatis3Simple">
+
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+            <property name="javaFileEncoding" value="utf-8"/>
+        </commentGenerator>
+
+        <!--数据源-->
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        
+        <javaModelGenerator targetPackage="${model.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimString" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="${xml.package}" targetProject="${xml.target.project}">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${mapper.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="sys_user"/>
+        <table tableName="sys_role"/>
+        <table tableName="sys_permission"/>
+        <table tableName="sys_role_permission"/>
+        <table tableName="sys_user_role"/>
+    </context>
+</generatorConfiguration>

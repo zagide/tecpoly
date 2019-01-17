@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zagi.managerweb.mapper.SysPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.zagi.managerweb.pojo.SysPermission">
+    <id column="id" jdbcType="SMALLINT" property="id" />
+    <id column="permission_id" jdbcType="CHAR" property="permissionId" />
+    <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+    <result column="permission_url" jdbcType="VARCHAR" property="permissionUrl" />
+    <result column="permission_type" jdbcType="CHAR" property="permissionType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+</mapper>
